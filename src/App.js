@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CssBaseline } from '@material-ui/core';
+import { CssBaseline, Link } from '@material-ui/core';
 import styled from 'styled-components';
 
 
@@ -24,7 +24,7 @@ const Title = styled.h2`
  
 `;
 const Description = styled.p`
- 
+  text-align: center;
 `;
 
 function App() {
@@ -36,11 +36,19 @@ function App() {
           In-n-Out
         </Title>
         <Description>
-          This is a list of cryptocurrency on/off ramp solutions.
+          Find the crypto on/off ramp that suits you best !
         </Description>
         <AppContent>
           <TableContainer />
         </AppContent>
+        <Description>
+          <b>We are looking for contributions !</b> If you want to help, please <Link href="https://github.com/pakokrew/in-n-out" target="_blank" rel="noopener noreferrer">contribute to the repo</Link>, or <Link href="https://t.me/cryptoramping" target="_blank" rel="noopener noreferrer">come to chat with us</Link>.
+        </Description>
+        <Description>
+          This is a <Link href="https://github.com/pakokrew/in-n-out" target="_blank" rel="noopener noreferrer">collaborative, not-for-profit, open-source project</Link>.
+          <br/> The information provided here may be out-of-date, incomplete or incorrect.
+          <br/> For accurate and up-to-date data, please refer to the provider's website directly.
+        </Description>
         <Legend/>
       </AppContainer>
     </>
