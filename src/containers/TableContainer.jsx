@@ -5,7 +5,7 @@ import {
   useFilters,
 } from 'react-table';
 
-import { Direction, providers, providersData } from '../lib/data';
+import { providersData } from '../lib/data';
 
 import Table from '../components/Table';
 import { TextFilter, SelectFilter } from '../components/Filters';
@@ -16,23 +16,20 @@ import {
   renderCurrencies,
   renderMethods,
 } from '../components/Cells';
+import { textMappings } from '../lib/textMappings';
 
-function DefaultColumnFilter({
-  column: { filterValue, preFilteredRows, setFilter },
-}) {
-  const count = preFilteredRows.length
-
+function DefaultColumnFilter({ column: { filterValue, preFilteredRows, setFilter } }) {
   return (
     <TextFilter
       value={filterValue || ''}
       onChange={value => setFilter(value || undefined)}
-      placeholder={`Search ${count} records...`}
+      placeholder={`Search ${preFilteredRows.length} records...`}
     />
   )
 }
 
 function SelectColumnFilter({ column: { filterValue, setFilter, preFilteredRows, id } }) {
-  const options = React.useMemo(() => {
+  const optionsKeys = React.useMemo(() => {
     const options = new Set()
     preFilteredRows.forEach(row => {
       const vs = row.values[id];
@@ -44,6 +41,14 @@ function SelectColumnFilter({ column: { filterValue, setFilter, preFilteredRows,
     })
     return [...options.values()]
   }, [id, preFilteredRows])
+
+  const options = React.useMemo(() =>
+      optionsKeys.map(k => ({
+        key: k,
+        label: textMappings[id] ? textMappings[id][k] : k
+      })),
+    [id, optionsKeys]
+  );
 
   return (
     <SelectFilter

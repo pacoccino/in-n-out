@@ -1,26 +1,28 @@
-import { Direction, providers } from '../lib/data';
 import React from 'react';
 
+import { Link } from '@material-ui/core';
+
+import { providers } from '../lib/data';
+import { textMappings } from '../lib/textMappings';
+
 export function renderDirection({ value }) {
-  if(value === Direction.OFF) return 'Off-ramp';
-  if(value === Direction.ON) return 'On-ramp';
-  return '';
+  return textMappings.direction[value];
 }
 
 export function renderProviders({ value }) {
   const l = value.map(p => providers[p]);
 
   return l.map(p => (
-    <a href={p.url} target="_blank" rel="noopener noreferrer">{p.name}</a>
+    <Link href={p.url} target="_blank" rel="noopener noreferrer">{p.name}</Link>
   ))
 }
 
 export function renderCountries({ value }) {
-  return value.join(' ');
+  return value.map(v => textMappings.countries[v]).join(', ');
 }
 export function renderCurrencies({ value }) {
-  return value.join(' ');
+  return value.join(', ');
 }
 export function renderMethods({ value }) {
-  return value.join(' ');
+  return value.map(v => textMappings.methods[v]).join(', ');
 }

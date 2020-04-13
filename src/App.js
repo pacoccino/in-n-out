@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 
 import TableContainer from './containers/TableContainer';
+import Legend from './components/Legend';
 
 const AppContainer = styled.div`
   display: flex;
@@ -40,6 +41,7 @@ function App() {
         <AppContent>
           <TableContainer />
         </AppContent>
+        <Legend/>
       </AppContainer>
     </>
   );
