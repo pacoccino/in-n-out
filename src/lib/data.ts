@@ -7,6 +7,7 @@ interface ProviderData {
   methods: Method[];
   currencies: string[];
   providers: string[];
+  kycLess?: boolean;
 }
 
 export const providers = {
@@ -34,6 +35,10 @@ export const providers = {
     name: 'Wyre',
     url: 'https://www.sendwyre.com',
   },
+  bity: {
+    name: 'Bity',
+    url: 'https://bity.com',
+  },
 };
 
 export const providersData: ProviderData[] = [
@@ -43,6 +48,7 @@ export const providersData: ProviderData[] = [
     countries: ['EU'],
     currencies: ['EUR', 'CHF'],
     methods: [Method.WIRE],
+    kycLess: true,
   },
   {
     direction: Direction.ON,
@@ -55,7 +61,7 @@ export const providersData: ProviderData[] = [
     direction: Direction.OFF,
     providers: ['monolith'],
     countries: ['EU'],
-    currencies: ['EUR'],
+    currencies: ['EUR', 'GBP'],
     methods: [Method.DEBIT_CARD],
   },
   {
@@ -78,5 +84,21 @@ export const providersData: ProviderData[] = [
     countries: ['US', 'UK', 'EU'],
     currencies: ['USD', 'GBP', 'EUR'],
     methods: [Method.CREDIT_CARD],
+  },
+  {
+    direction: Direction.ON,
+    providers: ['bity'],
+    countries: ['EU'],
+    currencies: ['EUR', 'CHF'],
+    methods: [Method.WIRE],
+    kycLess: true,
+  },
+  {
+    direction: Direction.OFF,
+    providers: ['bity'],
+    countries: ['EU'],
+    currencies: ['EUR', 'CHF'],
+    methods: [Method.WIRE],
+    kycLess: true,
   },
 ];
