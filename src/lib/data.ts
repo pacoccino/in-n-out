@@ -18,6 +18,22 @@ export const providers = {
     name: 'Transak',
     url: 'https://transak.io',
   },
+  monolith: {
+    name: 'Monolith',
+    url: 'https://monolith.xyz',
+  },
+  ramp: {
+    name: 'Ramp',
+    url: 'https://ramp.network',
+  },
+  moonpay: {
+    name: 'MoonPay',
+    url: 'https://www.moonpay.io',
+  },
+  wyre: {
+    name: 'Wyre',
+    url: 'https://www.sendwyre.com',
+  },
 };
 
 export const providersData: ProviderData[] = [
@@ -29,10 +45,38 @@ export const providersData: ProviderData[] = [
     methods: [Method.WIRE],
   },
   {
-    direction: Direction.OFF,
+    direction: Direction.ON,
     providers: ['transak'],
-    countries: ['UK', 'INDIA'],
-    currencies: ['INR', 'PND'],
+    countries: ['UK', 'IN'],
+    currencies: ['INR', 'GBP', 'EUR'],
     methods: [Method.WIRE],
+  },
+  {
+    direction: Direction.OFF,
+    providers: ['monolith'],
+    countries: ['EU'],
+    currencies: ['EUR'],
+    methods: [Method.DEBIT_CARD],
+  },
+  {
+    direction: Direction.ON,
+    providers: ['ramp'],
+    countries: ['EU', 'UK'],
+    currencies: ['EUR', 'GBP'],
+    methods: [Method.WIRE],
+  },
+  {
+    direction: Direction.ON,
+    providers: ['moonpay'],
+    countries: ['EU', 'US', 'UK'],
+    currencies: ['EUR', 'USD', 'GBP'],
+    methods: [Method.WIRE, Method.CREDIT_CARD],
+  },
+  {
+    direction: Direction.ON,
+    providers: ['wyre'],
+    countries: ['US', 'UK', 'EU'],
+    currencies: ['USD', 'GBP', 'EUR'],
+    methods: [Method.CREDIT_CARD],
   },
 ];
