@@ -6,6 +6,8 @@ There are plenty of solutions to go into and out of cryptocurrencies out there, 
 
 **In-N-Out** helps you find the one that suits you the best.
 
+[Try it out now](https://in-n-out.now.sh)
+
 ## Why
 
 This project was created after many requests from DAOs that needs to be funded with fiat and also where members need to withdraw in fiat, notably in projects helping to fight COVID-19 which connects donators and volunteers.
@@ -21,7 +23,7 @@ This is open source software, and any contributions are welcome to improve the i
 If you have informations about a new on/off ramp platform, updated data or spotted an error or a bug, you can [create an issue](https://github.com/pakokrew/in-n-out/issues/new) in this repository. 
 
 - Create a pull request
-If you are a developer, you can directly edit the [data](./src/lib/data.js) and submit a pull request.
+If you are a developer, you can directly edit the [data](./src/lib/data.ts) and submit a pull request.
 
 - Chat with us
 If you are unable to do one of the previous, come [chat on telegram](https://t.me/cryptoramping) with us.
