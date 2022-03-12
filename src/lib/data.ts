@@ -39,6 +39,10 @@ export const providers = {
     name: 'Bity',
     url: 'https://bity.com',
   },
+  mtpelerin: {
+    name: 'Mt Pelerin',
+    url: 'https://www.mtpelerin.com/',
+  },
 };
 
 export const providersData: ProviderData[] = [
@@ -98,6 +102,22 @@ export const providersData: ProviderData[] = [
     providers: ['bity'],
     countries: ['EU'],
     currencies: ['EUR', 'CHF'],
+    methods: [Method.WIRE],
+    kycLess: true,
+  }, 
+  {
+    direction: Direction.ON,
+    providers: ['mtpelerin'],
+    countries: ['EU', 'UK'],
+    currencies: ['AUD', 'CAD', 'CHF', 'DKK', 'EUR', 'GBP', 'HKD', 'JPY', 'NOK', 'NZD', 'SEK', 'SGD', 'USD', 'ZAR'],
+    methods: [Method.WIRE, Method.CREDIT_CARD, Method.DEBIT_CARD],
+    kycLess: true,
+  },
+  {
+    direction: Direction.OFF,
+    providers: ['mtpelerin'],
+    countries: ['EU', 'UK'],
+    currencies: ['AED', 'AUD', 'CAD', 'CHF', 'CZK', 'DKK', 'EUR', 'GBP', 'HKD', 'HUF', 'ILS', 'JPY', 'MXN', 'NOK', 'NZD', 'PLN', 'RON', 'SEK', 'SGD', 'THB', 'TRY', 'USD', 'ZAR'],
     methods: [Method.WIRE],
     kycLess: true,
   },
